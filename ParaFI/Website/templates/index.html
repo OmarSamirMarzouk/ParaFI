@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaFI WebApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>ParaFI</h1>
+        <button class="home-button" onclick="window.location='/'">Home</button>
+    </div>
+    <div class="hero-image">
+        <div class="hero-content">
+            <h2 class="welcome">Welcome to ParaFI Webapp</h2>
+            <button class="get-started" onclick="window.location='/dashboard';">Get Started</button>
+        </div>
+    </div>
+    
+    <!-- Additional content sections below -->
+    <div class="content-sections">
+        <div class="content-section">
+            <h2>About ParaFI</h2>
+            <p>ParaFI offers a sophisticated solution designed to counteract prevalent and increasingly straightforward Wi-Fi attacks that involve capturing Wi-Fi packets to crack passwords. By enhancing Wi-Fi security through an intuitive and straightforward approach, ParaFI empowers even non-technical users to take full control of their home Wi-Fi networks. This enhancement not only bolsters security but also maintains ease of use, ensuring that all users can manage their network with confidence and ease.</p>
+        </div>
+        <div class="content-section">
+            <h2>Services</h2>
+            <p>ParaFI is dedicated to providing comprehensive Wi-Fi security solutions tailored to meet the needs of both individual homeowners and organizations. Our services include:</p>
+            <ul>
+                <li><strong>Wi-Fi Security Audits:</strong> We conduct thorough assessments of your Wi-Fi network's security settings to identify vulnerabilities and recommend enhancements.</li>
+                <li><strong>Real-time Monitoring:</strong> Leveraging cutting-edge technology, we offer real-time surveillance of your network to detect and alert you to potential security breaches as they occur.</li>
+                <li><strong>Password Protection Improvements:</strong> We implement advanced encryption standards to fortify your network against unauthorized access and ensure your data remains protected.</li>
+                <li><strong>User-Friendly Security Management:</strong> Our platform is designed with simplicity in mind, enabling users with minimal technical knowledge to easily manage and maintain robust security protocols.</li>
+                <li><strong>Custom Security Solutions:</strong> Understanding that each user's needs are unique, we provide personalized solutions that are specifically tailored to align with your specific security requirements and lifestyle.</li>
+            </ul>
+            <p>At ParaFI, we empower you to safeguard your digital presence with leading-edge security solutions that do not compromise on ease of use or effectiveness.</p>
+        </div>
+        <div class="content-section">
+            <h2>How to Setup</h2>
+            <p>If you need assistance with setting up, please follow the link below for detailed instructions.</p>
+            <button onclick="window.location='setup.html';">Setup Guide</button>
+        </div>
+    </div>
+</body>
+</html>

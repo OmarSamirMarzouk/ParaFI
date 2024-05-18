@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ParaFI WebApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <span class="navbar-title">ParaFI</span>
+        <span class="navbar-dashboard">Dashboard</span>
+        <span class="navbar-home">
+            <button class="home-button" onclick="window.location='/'">Home</button>
+        </span>
+    </div>
+
+    <div class="dashboard-layout">
+        <div class="sidebar">
+            <button onclick="window.location='/dashboard';">Dashboard</button>
+            <button onclick="window.location='/users';">Existing Users</button>
+            <button onclick="window.location='/setup';">Setup</button>
+            <button onclick="window.location='/logout';">Logout</button>
+        </div>
+        
+        <div class="dashboard-main">
+            <div class="dashboard-top">
+                <div class="dashboard-box">
+                    <div class="connection-speed-box">
+                        <h2>Connection Speed</h2>
+                        <div class="gauge" id="downloadGauge"><div class="gauge-value" style="width:0%;"></div><span>0 Mbps</span></div>
+                        <div class="gauge" id="uploadGauge"><div class="gauge-value" style="width:0%;"></div><span>0 Mbps</span></div>
+                        <button onclick="updateGauges();">Run Speed Test</button>
+                        <p class="last-tested">Last tested on: <span id="lastTested">Not tested yet</span></p>
+                    </div>
+                    <div class="info-box-container">
+                        <div class="info-box">
+                            <h2>Notifications</h2>
+                            <ul>
+                                <li>Radius Server Up and Running at 14:46</li>
+                                <li>Radius Server Restored at 14:45</li>
+                                <li>Radius Server Down at 14:43</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h2>Connected Devices</h2>
+                            <ul>
+                                <li>Bob's Iphone</li>
+                                <li>Samsung SmartTV</li>
+                                <li>Alice's Samsung Phone</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
+            <div class="dashboard-bottom">
+                <h2>Server Logs</h2>
+                <pre>{{ server_logs }}</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

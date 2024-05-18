@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Existing Users - ParaFI WebApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/users.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>ParaFI</h1>
+        <button class="home-button" onclick="window.location='/'">Home</button>
+    </div>
+    <div class="dashboard-layout">
+        <div class="sidebar">
+            <button onclick="window.location='/dashboard';">Dashboard</button>
+            <button onclick="window.location='#';">Existing Users</button>
+            <button onclick="window.location='#';">Setup</button>
+            <button onclick="window.location='#';">Logout</button>
+        </div>
+        <div class="content-section">
+            <div class="user-form">
+                <h2>Create New User</h2>
+                <form id="newUserForm">
+                    <input type="text" id="newUsername" placeholder="Enter username" required>
+                    <input type="password" id="newPassword" placeholder="Enter password" required>
+                    <button type="submit">Add User</button>
+                </form>
+            </div>
+            <h2>Existing Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>
+                            <input type="password" value="{{ user.password }}" id="password-{{ loop.index }}" class="input-field password" readonly>
+                            <button onclick="togglePasswordVisibility('password-{{ loop.index }}');" class="toggle-password">
+                                <img src="{{ url_for('static', filename='images/eye-icon.png') }}" alt="Show/Hide">
+                            </button>
+                        </td>
+                        <td>
+                            <button onclick="editUser({{ loop.index }}, '{{ user.username }}', '{{ user.password }}');" class="edit-button">Edit</button>
+                            <button onclick="deleteUser('{{ user.username }}');" class="delete-button">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/users.js') }}"></script>
+</body>
+</html>

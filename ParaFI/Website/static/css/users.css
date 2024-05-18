@@ -1,0 +1,134 @@
+/* users.css - Styles specific to the users management page */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Form styling for creating new user */
+.user-form {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-form input[type="text"],
+.user-form input[type="password"] {
+    padding: 8px;
+    margin: 5px 0;
+    width: 300px; /* Fixed width for form inputs */
+    border: 1px solid #ccc;
+}
+
+.user-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.user-form button:hover {
+    background-color: #0056b3;
+}
+
+.password {
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 16px;
+    width: 80%;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+}
+
+.input-field {
+    width: 150px; /* Making the password field shorter */
+    padding: 5px;
+}
+
+.edit-button, .delete-button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #e0e0e0;
+}
+
+.dashboard-layout {
+    display: flex;
+}
+
+/* Sidebar styling for users.html */
+.sidebar {
+    width: 200px;
+    background-color: #333; /* Dark gray background */
+    color: white;
+    padding: 10px;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #444; /* Slightly lighter gray for buttons */
+    color: white;
+    border: none;
+    text-align: left;
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.sidebar button:hover {
+    background-color: #555; /* Even lighter gray for hover */
+}
+
+.content-section {
+    flex-grow: 1; /* Takes up the remaining space */
+    padding: 20px;
+    overflow: auto; /* Adds scrolling to the section if overflow */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    padding: 15px 50px;
+}
